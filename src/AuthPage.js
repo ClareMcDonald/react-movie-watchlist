@@ -22,6 +22,7 @@ export default function AuthPage({ setUser }) {
 
   return (
     <div>
+      <h3>The Very Nice Movie WatchList App</h3>
       <form onSubmit={handleSignIn}>
         <label> Email
           <input onChange={e => setEmail(e.target.value)} value={email}/>
