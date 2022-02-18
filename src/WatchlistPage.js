@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { getWatchlistItems } from './services/fetch-utils';
-import WatchlistItem from './WatchlistItem';
 import MovieList from './MovieList';
 
 export default function WatchlistPage() {
