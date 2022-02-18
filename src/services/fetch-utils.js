@@ -38,3 +38,11 @@ export async function searchMovies(query) {
   // console.log(json);
   return json.data.results;
 }
+
+export async function addToWatchlist(movie) {
+  const response = await client
+    .from('watchlist')
+    .insert(movie);
+  
+  return checkError(response);
+}
