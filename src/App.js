@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getUser } from 'react';
+import { getUser, logout } from './services/fetch-utils.js';
 import './App.css';
 import AuthPage from './AuthPage';
 import WatchlistPage from './WatchlistPage';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   const [user, setUser] = useState('');
@@ -15,13 +14,19 @@ function App() {
     setUser(newUser);
   }, []);
 
+  async function handleLogout() {
+    logout();
+
+    setUser('');
+  }
+
   return (
     <Router>
       <div className="App">
         <header className="App-header">
           {user &&
             <>
-              <button>Logout</button>
+              <button onClick={handleLogout}>Logout</button>
             </>
           }
         </header>

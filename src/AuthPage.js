@@ -25,14 +25,14 @@ export default function AuthPage({ setUser }) {
       <h3>The Very Nice Movie WatchList App</h3>
       <form onSubmit={handleSignIn}>
         <label> Email
-          <input onChange={e => setEmail(e.target.value)} value={email}/>
+          <input onChange={e => setEmail(e.target.value)} value={email} name="email" required type="email"/>
         </label>
         <label> Password
-          <input onChange={e => setPassword(e.target.value)} value={password} />
+          <input onChange={e => setPassword(e.target.value)} value={password} name="password" required type="password"/>
         </label>
-        <button>SignIn</button>
+        <button >SignIn</button>
+        <button type="button" onClick={handleSignUp}>SignUp</button>
       </form>
-      <button onClick={handleSignUp}>SignUp</button>
     </div>
   );
 }

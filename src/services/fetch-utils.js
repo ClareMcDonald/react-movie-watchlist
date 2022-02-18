@@ -15,3 +15,9 @@ export async function signIn(email, password) {
 
   return response.user;
 }
+
+export async function logout() {
+  await client.auth.signOut();
+    
+  return window.location.hfref = '../';
+}
