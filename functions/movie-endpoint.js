@@ -3,6 +3,10 @@ require('dotenv').config();
 
 
 exports.handler = async (event, context) => {
+  const searchQuery = event.queryStringParameters.searchQuery;
+
+  const URL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&page=1&include_adult=false&query=${searchQuery}`;
+  
   try {
     const response = await fetch('https://cat-fact.herokuapp.com/facts');
     const data = await response.json();
