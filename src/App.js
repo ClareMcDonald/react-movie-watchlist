@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { getUser } from 'react';
 import './App.css';
 import AuthPage from './AuthPage';
+import WatchlistPage from './WatchlistPage';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
@@ -18,12 +19,23 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
+          {user &&
+            <>
+              <button>Logout</button>
+            </>
+          }
         </header>
         <Switch>
           <Route exact path="/">
             {user
               ? <Redirect to="/list-page" />
               : <AuthPage setUser={setUser} />
+            }
+          </Route>
+          <Route exact path="/list-page" >
+            {user
+              ? <WatchlistPage />
+              : <Redirect to="/" />
             }
           </Route>
         </Switch>
