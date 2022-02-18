@@ -15,6 +15,11 @@ export default function SearchPage() {
   }
     
   return (
-    <div>SearchPage</div>
+    <div>
+      <form onSubmit={handleSearch}>
+        <input value={searchTitle} onChange={e => setSearchTitle(e.target.value)} />
+        <button>Search</button>
+      </form>
+    </div>
   );
 }

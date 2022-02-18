@@ -36,5 +36,5 @@ export async function searchMovies(query) {
 
   const json = await response.json();
 
-  // return json.
+  return json.results;
 }
