@@ -21,3 +21,12 @@ export async function logout() {
     
   return window.location.hfref = '../';
 }
+
+export async function getWatchlistItems() {
+  const response = await client
+    .from('watchlist')
+    .select()
+    .order('id');
+    
+  return checkError(response);
+}
