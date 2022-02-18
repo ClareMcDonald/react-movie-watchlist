@@ -4,7 +4,7 @@ import { searchMovies } from './services/fetch-utils.js';
 import MovieList from './MovieList.js';
 
 export default function SearchPage() {
-  const [searchTitle, setSearchTitle] = useState();
+  const [searchTitle, setSearchTitle] = useState('');
   const [movies, setMovies] = useState([]);
   
   async function handleSearch(e) {
