@@ -35,6 +35,6 @@ export async function searchMovies(query) {
   const response = await fetch(`/.netlify/functions/movie-endpoint?searchQuery=${query}`);
 
   const json = await response.json();
-
+  // console.log(json);
   return json.data.results;
 }
