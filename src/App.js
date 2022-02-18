@@ -4,6 +4,7 @@ import { getUser, logout } from './services/fetch-utils.js';
 import './App.css';
 import AuthPage from './AuthPage';
 import WatchlistPage from './WatchlistPage';
+import SearchPage from './SearchPage.js';
 
 function App() {
   const [user, setUser] = useState('');
@@ -33,18 +34,23 @@ function App() {
         <Switch>
           <Route exact path="/">
             {user
-              ? <Redirect to="/list-page" />
+              ? <Redirect to="/watchlist" />
               : <AuthPage setUser={setUser} />
             }
           </Route>
-          <Route exact path="/list-page" >
+          <Route exact path="/watchlist" >
             {user
               ? <WatchlistPage />
               : <Redirect to="/" />
             }
           </Route>
+          <Route exact path="/search" >
+            {user
+              ? <SearchPage />
+              : <Redirect to="/" />
+            }
+          </Route>
         </Switch>
-    
       </div >
     </Router>
   );
