@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { searchMovies } from './services/fetch-utils.js';
+import MovieList from './MovieList.js';
 
 export default function SearchPage() {
   const [searchTitle, setSearchTitle] = useState();
@@ -20,6 +21,11 @@ export default function SearchPage() {
         <input value={searchTitle} onChange={e => setSearchTitle(e.target.value)} />
         <button>Search</button>
       </form>
+      <section>
+        Movie results:
+        <MovieList movies={movies} />
+      </section>
     </div>
+      
   );
 }

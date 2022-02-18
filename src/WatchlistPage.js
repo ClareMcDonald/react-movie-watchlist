@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { getWatchlistItems } from './services/fetch-utils';
 import WatchlistItem from './WatchlistItem';
+import MovieList from './MovieList';
 
 export default function WatchlistPage() {
   const [movies, setMovies] = useState([]);
@@ -20,7 +21,8 @@ export default function WatchlistPage() {
 
   return (
     <div>
-      {movies.map((movie, i) => <WatchlistItem key={`${movie.title}-${i}`} movie={movie}/>)}
+      <h3>Watchlist</h3>
+      <MovieList movies={movies} />
     </div>
   );
 }
