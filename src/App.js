@@ -10,7 +10,7 @@ function App() {
   const [user, setUser] = useState('');
 
   useEffect(() => {
-    const newUser = getUser;
+    const newUser = getUser();
 
     setUser(newUser);
   }, []);

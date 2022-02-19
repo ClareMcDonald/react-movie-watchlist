@@ -11,7 +11,7 @@ export default function WatchlistPage() {
     setMovies(watchList);
       
   }
-    
+
   useEffect(() => {
       
     fetchWatchlist();

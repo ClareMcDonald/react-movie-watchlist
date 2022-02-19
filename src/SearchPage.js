@@ -23,10 +23,14 @@ export default function SearchPage() {
   }
     
   function isOnWatchlist(api_id) {
-    const match = watchlist.find(item => Number(item.api_id === Number(api_id)));
+    const match = watchlist.find(movie => Number(movie.api_id) === Number(api_id));
 
     return Boolean(match);
   }
+
+  useEffect(() => {
+    fetchWatchlist();
+  }, []);
 
   return (
     <div>

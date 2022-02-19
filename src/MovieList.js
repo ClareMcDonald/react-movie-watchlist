@@ -3,6 +3,7 @@ import WatchlistItem from './WatchlistItem';
 import Movie from './Movie';
 
 export default function MovieList({ movies, fetchWatchlist, isOnWatchlist }) {
+
   return (
     <div className='movie-list'>
       {
@@ -10,8 +11,7 @@ export default function MovieList({ movies, fetchWatchlist, isOnWatchlist }) {
           ? <WatchlistItem
             key={`${movie.title}-${i}`}
             movie={movie}
-            fetchWatchlist={fetchWatchlist}
-            isOnWatchlist={isOnWatchlist} />
+            fetchWatchlist={fetchWatchlist} />
           : <Movie
             key={`${movie.title}-${i}`}
             movie={movie}
