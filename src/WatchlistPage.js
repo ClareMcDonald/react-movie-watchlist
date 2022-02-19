@@ -21,7 +21,7 @@ export default function WatchlistPage() {
   return (
     <div>
       <h3>Watchlist</h3>
-      <MovieList movies={movies} />
+      <MovieList movies={movies} fetchWatchlist={fetchWatchlist} />
     </div>
   );
 }
