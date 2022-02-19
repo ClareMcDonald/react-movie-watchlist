@@ -46,3 +46,13 @@ export async function addToWatchlist(movie) {
   
   return checkError(response);
 }
+
+export async function watchMovie(id) {
+  const response = await client
+    .from('watchlist')
+    .update({ watched: true })
+    .match({ id })
+    .single();
+  
+  return checkError(response);
+}
