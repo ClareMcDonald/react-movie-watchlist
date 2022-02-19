@@ -4,7 +4,7 @@ import { addToWatchlist } from './services/fetch-utils';
 export default function Movie({ movie, isOnWatchlist, fetchWatchlist }) {
 
   const haveWatched = isOnWatchlist(movie.id);
-  console.log('======== have watched?', haveWatched);
+
   async function handleClick() {
     if (!haveWatched) {
       const watchlistItem = {

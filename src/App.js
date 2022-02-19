@@ -27,8 +27,8 @@ function App() {
         <header className="App-header">
           {user &&
             <>
-              <NavLink to="/watchlist">WatchList Page</NavLink>
-              <NavLink to="/search">Search Page</NavLink>
+              <NavLink className='link' to="/watchlist">WatchList Page</NavLink>
+              <NavLink className='link' to="/search">Search Page</NavLink>
               <button onClick={handleLogout}>Logout</button>
             </>
           }

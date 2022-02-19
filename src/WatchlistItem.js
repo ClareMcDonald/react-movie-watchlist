@@ -2,7 +2,7 @@ import React from 'react';
 import { watchMovie } from './services/fetch-utils';
 
 export default function WatchlistItem({ movie, fetchWatchlist }) {
-  console.log('============== watchlist item', movie);
+  
   async function handleClick() {
 
     await watchMovie(movie.id);
@@ -11,7 +11,7 @@ export default function WatchlistItem({ movie, fetchWatchlist }) {
   }
 
   return (
-    <div onClick={handleClick}>
+    <div onClick={handleClick} className="watchlist-item">
       <h1>{movie.watched ? '✔️' : '👀'}</h1>
       <h3>{movie.title}</h3>
       <h5>{movie.description}</h5>
