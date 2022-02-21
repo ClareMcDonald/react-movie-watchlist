@@ -14,14 +14,22 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: cornflowerblue;
+  min-height: 20vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.link {
+background-color: orchid;
+padding: 5px;
+border: orchid solid 2px;
+border-radius: 3px;
+margin: 20px;
 }
 
 .App-link {
@@ -35,4 +43,49 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+img {
+  width: 200px;
+}
+
+.movie-item {
+  border: solid lightblue 3px;
+  margin: 4px;
+  cursor: pointer;
+  width: 400px;
+  height: 600px;
+}
+
+.watched {
+  cursor: none;
+  border: solid gray 3px;
+}
+
+.watchlist-item {
+  border: solid lightblue 3px;
+  margin: 4px;
+  cursor: pointer;
+  width: 400px;
+  height: 600px;
+}
+
+.movie-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+form label {
+  display: block;
+}
+
+button {
+  background-color: darkcyan;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
 }
