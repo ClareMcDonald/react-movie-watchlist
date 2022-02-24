@@ -1,19 +1,19 @@
 import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getUser, logout } from './services/fetch-utils.js';
+import { useState } from 'react';
+import { logout } from './services/fetch-utils.js';
 import './App.css';
 import AuthPage from './AuthPage';
 import WatchlistPage from './WatchlistPage';
 import SearchPage from './SearchPage.js';
 
 function App() {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState(localStorage.getItem('supabase.auth.token'));
 
-  useEffect(() => {
-    const newUser = getUser();
+  // useEffect(() => {
+  //   const newUser = getUser();
 
-    setUser(newUser);
-  }, []);
+  //   setUser(newUser);
+  // }, []);
 
   async function handleLogout() {
     logout();
