@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import AuthPage from './AuthPage';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Logout/i);
+  render(<AuthPage />);
+  const linkElement = screen.getByText(/Email/i);
   expect(linkElement).toBeInTheDocument();
 });
